@@ -12,6 +12,7 @@ Dancer.prototype.step = function(timeBetweenSteps) {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   setTimeout(this.step.bind(this, timeBetweenSteps), timeBetweenSteps);
+  this.match();
 };
 
 Dancer.prototype.setPosition = function(top, left) {
@@ -56,7 +57,7 @@ Dancer.prototype.match = function() {
       var a = dancersCopy[0].top - dancersCopy[i].top;
       var b = dancersCopy[0].left - dancersCopy[i].left; 
       var c = Math.sqrt((a * a) + (b * b));
-      if (c < 500) {
+      if (c < 200) {
         dancersCopy[0].groupMove();
         dancersCopy[i].groupMove();
         break;
@@ -67,11 +68,10 @@ Dancer.prototype.match = function() {
 };
 
 Dancer.prototype.groupMove = function() {
-  console.log('group');
   // var styleSettings = {
   //   'color': 'blue'
   // };
-  this.$node.hide(); 
+  this.$node.toggleClass('changeColor');
 };
 
 // Split up lineUp into multiple lines if too many dancers on teh dancefloor
