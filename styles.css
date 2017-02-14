@@ -5,6 +5,8 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url(imgs/background.jpg);
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
