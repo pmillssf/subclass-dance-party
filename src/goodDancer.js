@@ -3,6 +3,10 @@ var GoodDancer = function(top, left, timeBetweenSteps) {
   this.top = top;
   this.left = left;
   this.move = false;
+  var $savednode = this.$node;
+  this.$mouseover = $(this.$node).on('mouseover', function(event) {
+    $savednode.toggleClass('changeColor');
+  });
 };
 
 GoodDancer.prototype = Object.create(BlinkyDancer.prototype);
@@ -24,7 +28,12 @@ GoodDancer.prototype.step = function(timeBetweenSteps) {
   this.setPosition(this.top, this.left);
   this.move = !this.move;
 };
-
+GoodDancer.prototype.changeColor = function() {
+  // var styleSettings = {
+  //   'border': 'blue'
+  // };
+  this.$node.addClass('changeColor');
+};
 /*  var styleSettings = {
     left: this.left
   };
