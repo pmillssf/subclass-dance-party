@@ -27,6 +27,18 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.blinkyDancer {
+
+} 
+.goodDancer {
+
+}
+.badDancer {
+  background-image: url(imgs/BadPanda.gif);
+  background-size: cover;
+  padding: 100px;
+  border: 1px;
+}
 .changeColor {
   border:10px solid blue;
 }

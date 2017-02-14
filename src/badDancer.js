@@ -6,6 +6,7 @@ var BadDancer = function(top, left, timeBetweenSteps) {
   this.counter = 0;
   this.topOriginal = top;
   this.leftOriginal = left;
+  this.$node.addClass('badDancer');
 };
 
 BadDancer.prototype = Object.create(BlinkyDancer.prototype);
