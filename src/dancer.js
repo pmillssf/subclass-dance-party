@@ -23,3 +23,28 @@ Dancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+Dancer.prototype.lineUp = function() {
+  var dancersTotal = window.dancers.length;
+  var spacing = 1000 / dancersTotal;
+  var counter = 0;
+  for (var i = 0; i < dancersTotal; i++) {
+    var left = 100 + counter;
+/*    if (window.dancers.topOriginal !== undefined) {
+      window.dancers[i].topOriginal = 80;
+      window.dancers[i].leftOriginal = left;
+      window.dancers[i].setPosition(window.dancers[i].topOriginal, window.dancers[i].leftOriginal);
+    } else*/ if (window.dancers[i].left === undefined) {
+      var top = 80;
+      window.dancers[i].setPosition(top, left);
+    } else {
+      window.dancers[i].top = 80;
+      window.dancers[i].left = left;
+      window.dancers[i].setPosition(window.dancers[i].top, window.dancers[i].left);
+    }
+    counter = counter + spacing;  
+  }
+
+};
+
+// Split up lineUp into multiple lines if too many dancers on teh dancefloor

@@ -35,10 +35,6 @@ BadDancer.prototype.step = function(timeBetweenSteps) {
     this.left = this.leftOriginal;
     this.top = this.topOriginal;
   }
-  var styleSettings = {
-    top: this.top,
-    left: this.left
-  };
-  this.$node.css(styleSettings);
+  this.setPosition(this.top, this.left);
   this.move = Math.floor(Math.random() * 10);
 };

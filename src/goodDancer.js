@@ -21,9 +21,11 @@ GoodDancer.prototype.step = function(timeBetweenSteps) {
   if (!this.move) {
     this.left = this.left + 10;
   }
-  var styleSettings = {
-    left: this.left
-  };
-  this.$node.css(styleSettings);
+  this.setPosition(this.top, this.left);
   this.move = !this.move;
 };
+
+/*  var styleSettings = {
+    left: this.left
+  };
+  this.$node.css(styleSettings);*/
