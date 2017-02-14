@@ -33,5 +33,8 @@ $(document).ready(function() {
   $('.LineUpButton').on('click', function(event) {
     window.dancers[0].lineUp();
   });
+  $('.MatchButton').on('click', function(event) {
+    window.dancers[0].match();
+  });
 });
 

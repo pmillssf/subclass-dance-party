@@ -44,7 +44,31 @@ Dancer.prototype.lineUp = function() {
     }
     counter = counter + spacing;  
   }
+};
 
+Dancer.prototype.match = function() {
+  var dancersCopy = window.dancers.slice(0, window.dancers.length - 1);
+  while (dancersCopy.length !== 0) {
+    for (var i = 1; i < dancersCopy.length; i++) {
+      var a = dancersCopy[0].top - dancersCopy[i].top;
+      var b = dancersCopy[0].left - dancersCopy[i].left; 
+      var c = Math.sqrt((a * a) + (b * b));
+      if (c < 500) {
+        dancersCopy[0].groupMove();
+        dancersCopy[i].groupMove();
+        break;
+      }
+    }
+    dancersCopy.splice(0, 1);
+  }
+};
+
+Dancer.prototype.groupMove = function() {
+  console.log('group');
+  // var styleSettings = {
+  //   'color': 'blue'
+  // };
+  this.$node.hide(); 
 };
 
 // Split up lineUp into multiple lines if too many dancers on teh dancefloor
