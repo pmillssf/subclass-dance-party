@@ -30,11 +30,14 @@ Dancer.prototype.lineUp = function() {
   var counter = 0;
   for (var i = 0; i < dancersTotal; i++) {
     var left = 100 + counter;
-/*    if (window.dancers.topOriginal !== undefined) {
+    //console.log(window.dancers[i].topOriginal !== undefined);
+    if (window.dancers[i].topOriginal !== undefined) {
       window.dancers[i].topOriginal = 80;
       window.dancers[i].leftOriginal = left;
+      window.dancers[i].top = 80;
+      window.dancers[i].left = left;
       window.dancers[i].setPosition(window.dancers[i].topOriginal, window.dancers[i].leftOriginal);
-    } else*/ if (window.dancers[i].left === undefined) {
+    } else if (window.dancers[i].left === undefined) {
       var top = 80;
       window.dancers[i].setPosition(top, left);
     } else {
