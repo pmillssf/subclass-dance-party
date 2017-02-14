@@ -1,8 +1,9 @@
 var GoodDancer = function(top, left, timeBetweenSteps) {
-  BlinkyDancer.call(this, top, left, timeBetweenSteps);
+  BlinkyDancer.call(this, top, left, (timeBetweenSteps + 1000));
   this.top = top;
   this.left = left;
   this.move = false;
+  this.$node.addClass('goodDancer');
   var $savednode = this.$node;
   this.$mouseover = $(this.$node).on('mouseover', function(event) {
     $savednode.toggleClass('changeColor');

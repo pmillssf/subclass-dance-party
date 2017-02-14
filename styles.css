@@ -28,10 +28,16 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .blinkyDancer {
-
+  background-image: url(imgs/BlinkyPanda.gif);
+  background-size: cover;
+  padding: 100px;
+  border: 1px;
 } 
 .goodDancer {
-
+  background-image: url(imgs/GoodPanda.gif);
+  background-size: cover;
+  padding: 100px;
+  border: 1px;
 }
 .badDancer {
   background-image: url(imgs/BadPanda.gif);

@@ -1,5 +1,5 @@
 var BadDancer = function(top, left, timeBetweenSteps) {
-  BlinkyDancer.call(this, top, left, timeBetweenSteps);
+  BlinkyDancer.call(this, top, left, (timeBetweenSteps + 1000));
   this.top = top;
   this.left = left;
   this.move = 0;
