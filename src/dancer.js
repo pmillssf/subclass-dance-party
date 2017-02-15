@@ -27,10 +27,12 @@ Dancer.prototype.setPosition = function(top, left) {
 
 Dancer.prototype.lineUp = function() {
   var dancersTotal = window.dancers.length;
-  var spacing = 1000 / dancersTotal;
+  var spacing = 1500 / dancersTotal;
   var counter = 0;
   for (var i = 0; i < dancersTotal; i++) {
     var left = 100 + counter;
+    window.dancers[i].$node.removeClass('changeYellow changePurple changeGreen changeRed changeBlue');
+    window.dancers[i].$node.addClass('hideColor');
     //console.log(window.dancers[i].topOriginal !== undefined);
     if (window.dancers[i].topOriginal !== undefined) {
       window.dancers[i].topOriginal = 80;
@@ -51,15 +53,17 @@ Dancer.prototype.lineUp = function() {
 };
 
 Dancer.prototype.match = function() {
-  var dancersCopy = window.dancers.slice(0, window.dancers.length - 1);
+  var dancersCopy = window.dancers.slice(0, window.dancers.length);
   while (dancersCopy.length !== 0) {
     for (var i = 1; i < dancersCopy.length; i++) {
       var a = dancersCopy[0].top - dancersCopy[i].top;
       var b = dancersCopy[0].left - dancersCopy[i].left; 
       var c = Math.sqrt((a * a) + (b * b));
       if (c < 200) {
-        dancersCopy[0].groupMove();
-        dancersCopy[i].groupMove();
+        var num = Math.floor(Math.random() * 5);
+        dancersCopy[0].groupMove(num);
+        dancersCopy[i].groupMove(num);
+        dancersCopy.splice(i, 1);
         break;
       }
     }
@@ -67,11 +71,13 @@ Dancer.prototype.match = function() {
   }
 };
 
-Dancer.prototype.groupMove = function() {
+Dancer.prototype.groupMove = function(num) {
   // var styleSettings = {
   //   'color': 'blue'
   // };
-  this.$node.toggleClass('changeColor');
+  var colors = ['changeBlue', 'changeRed', 'changeGreen', 'changePurple', 'changeYellow'];
+  this.$node.removeClass('changeYellow changePurple changeGreen changeRed changeBlue');
+  this.$node.addClass(colors[num]);
 };
 
 // Split up lineUp into multiple lines if too many dancers on teh dancefloor

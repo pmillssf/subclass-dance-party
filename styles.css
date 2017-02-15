@@ -45,6 +45,21 @@ body, a:link, a:visited, a:active{
   padding: 100px;
   border: 1px;
 }
-.changeColor {
+.changeBlue {
   border:10px solid blue;
+}
+.changeRed {
+  border:10px solid red;
+}
+.changeGreen {
+  border:10px solid green;
+}
+.changePurple {
+  border:10px solid purple;
+}
+.changeYellow {
+  border:10px solid yellow;
+}
+.hideColor {
+  border:10px;
 }
