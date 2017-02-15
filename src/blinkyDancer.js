@@ -3,6 +3,10 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
   this.top = top;
   this.left = left;
   this.$node.addClass('blinkyDancer');
+  var $savednode = this.$node;
+  this.$mouseover = $(this.$node).on('mouseover', function(event) {
+    $savednode.toggleClass('blinkyDancer2');
+  });
  
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function

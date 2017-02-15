@@ -33,6 +33,12 @@ body, a:link, a:visited, a:active{
   padding: 100px;
   border: 1px;
 } 
+.blinkyDancer2 {
+  background-image: url(imgs/BlinkyPanda2.gif);
+  background-size: cover;
+  padding: 100px;
+  border: 1px;
+} 
 .goodDancer {
   background-image: url(imgs/GoodPanda.gif);
   background-size: cover;
