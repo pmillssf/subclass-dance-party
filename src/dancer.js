@@ -31,7 +31,7 @@ Dancer.prototype.lineUp = function() {
   var counter = 0;
   for (var i = 0; i < dancersTotal; i++) {
     var left = 100 + counter;
-    window.dancers[i].$node.removeClass('changeYellow changePurple changeGreen changeRed changeBlue');
+    window.dancers[i].$node.removeClass('changeYellow changePurple changeGreen changeRed changeBlue changeOrange');
     window.dancers[i].$node.addClass('hideColor');
     //console.log(window.dancers[i].topOriginal !== undefined);
     if (window.dancers[i].topOriginal !== undefined) {
@@ -60,7 +60,7 @@ Dancer.prototype.match = function() {
       var b = dancersCopy[0].left - dancersCopy[i].left; 
       var c = Math.sqrt((a * a) + (b * b));
       if (c < 200) {
-        var num = Math.floor(Math.random() * 5);
+        var num = Math.floor(Math.random() * 6);
         dancersCopy[0].groupMove(num);
         dancersCopy[i].groupMove(num);
         dancersCopy.splice(i, 1);
@@ -75,8 +75,8 @@ Dancer.prototype.groupMove = function(num) {
   // var styleSettings = {
   //   'color': 'blue'
   // };
-  var colors = ['changeBlue', 'changeRed', 'changeGreen', 'changePurple', 'changeYellow'];
-  this.$node.removeClass('changeYellow changePurple changeGreen changeRed changeBlue');
+  var colors = ['changeBlue', 'changeRed', 'changeGreen', 'changePurple', 'changeYellow', 'changeOrange'];
+  this.$node.removeClass('changeYellow changePurple changeGreen changeRed changeBlue changeOrange');
   this.$node.addClass(colors[num]);
 };
 

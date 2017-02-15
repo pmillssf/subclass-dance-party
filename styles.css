@@ -66,6 +66,9 @@ body, a:link, a:visited, a:active{
 .changeYellow {
   border:10px solid yellow;
 }
+.changeOrange {
+  border:10px solid orange;
+}
 .hideColor {
   border:10px;
 }
